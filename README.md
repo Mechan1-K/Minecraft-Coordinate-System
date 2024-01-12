@@ -1,1 +1,1 @@
-"# MCS (Minecraft Coordinate System)" 
+# MCS (Minecraft Coordinate System) 
