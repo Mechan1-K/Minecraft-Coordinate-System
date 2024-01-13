@@ -1,9 +1,18 @@
 import time
-system = [[0, 0, 0, "This is an example"]]
 
 def display(x):
     for i in range(len(x)):
         print(f"{i} | {x[i][0]} {x[i][1]} {x[i][2]} {'.' * (18 - len(str(x[i][0]) + str(x[i][1]) + str(x[i][2])))} | {x[i][3]}")
+
+def save():
+    save_file = open(r"_internal\save.txt", "w")
+    save_file.write(str(system))
+    save_file.close()
+
+save_file = open(r"_internal\save.txt", "r")
+system = eval(save_file.read())
+print(system)
+save_file.close()
 
 LINE = "-------------------------"
 running = True
@@ -21,7 +30,7 @@ while running:
             Here's a list of the commands:
             + | start adding an item to the system
             - | remove an item from the system
-            x | exit and stop running the program
+            x | save data and exit
             """)
             time.sleep(5)
         case "+":
@@ -35,7 +44,14 @@ while running:
            deletionee = int(input("What index position? [int]\n"))
            del system[deletionee]
         case "x":
-            print("Goodbye!")
-            running = False
+            print("Saving data...")
+            try:
+                save()
+                print("Data written, goodbye!")
+                running = False
+            except:
+                print("Something went wrong...")
         case _:
             print("Command unrecognized, please try again.")
+
+save()
