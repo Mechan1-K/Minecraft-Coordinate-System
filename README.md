@@ -4,9 +4,6 @@
 A small project that saves minecraft coordinates with descriptions 
 
 # Changelog:
-<<<<<<< HEAD
-1.1.0 - CURRENT - added:
-- saving to file
 
 ## 1.1.0
 added:
