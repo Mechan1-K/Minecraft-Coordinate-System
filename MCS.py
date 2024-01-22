@@ -5,16 +5,16 @@ def display(x):
         print(f"{i} | {x[i][0]} {x[i][1]} {x[i][2]} {'.' * (18 - len(str(x[i][0]) + str(x[i][1]) + str(x[i][2])))} | {x[i][3]}")
 
 def save():
-    save_file = open(r"_internal\save.txt", "w")
+    save_file = open(r"saves\save.txt", "w")
     save_file.write(str(system))
     save_file.close()
 
-save_file = open(r"_internal\save.txt", "r")
+save_file = open(r"saves\save.txt", "r")
 system = eval(save_file.read())
 print(system)
 save_file.close()
 
-LINE = "-------------------------"
+LINE = "-----------------------------------------"
 running = True
 
 while running:
